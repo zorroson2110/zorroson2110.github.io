@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fbfbfd;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --card: #ffffff;
+  --line: rgba(0, 0, 0, 0.08);
+  --accent: #7c5cff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #161618; --text: #f5f5f7; --muted: #a1a1a6; --card: #202023; --line: rgba(255, 255, 255, 0.1); --accent: #9a82ff; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.bar {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1040px; margin: 0 auto; padding: 18px 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; letter-spacing: -0.02em; }
+.brand:hover { text-decoration: none; }
+.mark { width: 28px; height: 28px; border-radius: 8px; background: url("logo.svg") center / cover no-repeat; }
+.hero-logo { display: block; width: 112px; height: 112px; margin: 0 auto 28px; border-radius: 26px; box-shadow: 0 18px 40px -16px rgba(124, 92, 255, 0.7); }
+.bar nav { display: flex; gap: 20px; font-size: 14px; }
+.bar nav a { color: var(--muted); }
+.bar nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+.hero { max-width: 820px; margin: 0 auto; padding: 72px 20px 40px; text-align: center; }
+.hero h1 { margin: 0; font-size: clamp(34px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.035em; }
+.grad { background: linear-gradient(135deg, #7c5cff, #a95cff 48%, #ff5fa2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede { max-width: 620px; margin: 22px auto 0; color: var(--muted); font-size: 19px; }
+
+.features {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+  max-width: 1040px; margin: 0 auto; padding: 24px 20px 64px;
+}
+.features article { padding: 22px 22px 18px; border-radius: 18px; background: var(--card); box-shadow: 0 0 0 0.5px var(--line), 0 10px 30px -18px rgba(0, 0, 0, 0.3); }
+.features h2 { margin: 0 0 6px; font-size: 17px; letter-spacing: -0.01em; }
+.features p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.doc { max-width: 720px; margin: 0 auto; padding: 40px 20px 64px; }
+.doc h1 { margin: 0; font-size: 40px; letter-spacing: -0.03em; }
+.doc .meta { margin: 6px 0 28px; color: var(--muted); font-size: 14px; }
+.doc h2 { margin: 34px 0 8px; font-size: 20px; letter-spacing: -0.015em; }
+.doc ul { padding-left: 20px; }
+.doc li + li { margin-top: 8px; }
+
+.foot { max-width: 1040px; margin: 0 auto; padding: 24px 20px 40px; border-top: 0.5px solid var(--line); color: var(--muted); font-size: 13px; }
